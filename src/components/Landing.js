@@ -44,7 +44,7 @@ export default function Landing({ logo }) {
       <section id="home" data-section className="section hero">
         <div className="hero-inner">
           <h1>Synapse Solutions</h1>
-          <p>Engineering modern solutions for complex problems.</p>
+          <p>Engineering the pathways that power innovation.</p>
           <div className="cta">
             <button className="btn primary" onClick={() => scrollTo('services')}>Get Started</button>
             <button className="btn outline" onClick={() => scrollTo('about')}>Learn More</button>
@@ -52,17 +52,45 @@ export default function Landing({ logo }) {
         </div>
       </section>
 
-      <section id="services" data-section className="section">
+      {/* Services section updated to show cards under the hero */}
+      <section id="services" data-section className="section section-cards">
         <div className="container">
           <h2>Services</h2>
-          <p>Consulting · Systems Integration · Cloud & Data Engineering</p>
+          <div className="card-grid">
+            <article className="card">
+              <h3>Consulting</h3>
+              <p>Strategy, architecture reviews, and program guidance to accelerate delivery.</p>
+            </article>
+            <article className="card">
+              <h3>Systems Integration</h3>
+              <p>End-to-end integration across legacy and modern platforms for seamless operations.</p>
+            </article>
+            <article className="card">
+              <h3>Cloud & Data Engineering</h3>
+              <p>Scalable cloud builds, data pipelines, and analytics that unlock insights.</p>
+            </article>
+          </div>
         </div>
       </section>
 
-      <section id="solutions" data-section className="section alt">
+      {/* Solutions section updated to show cards as well */}
+      <section id="solutions" data-section className="section alt section-cards">
         <div className="container">
           <h2>Solutions</h2>
-          <p>Custom solutions tailored to mission and enterprise needs.</p>
+          <div className="card-grid">
+            <article className="card">
+              <h3>Mission Systems</h3>
+              <p>Robust, secure systems designed for mission-critical environments.</p>
+            </article>
+            <article className="card">
+              <h3>Enterprise Platforms</h3>
+              <p>Custom platforms that scale with business and technical demands.</p>
+            </article>
+            <article className="card">
+              <h3>AI & Automation</h3>
+              <p>Practical AI and automation that reduce cost and improve outcomes.</p>
+            </article>
+          </div>
         </div>
       </section>
 

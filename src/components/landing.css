@@ -137,3 +137,58 @@ html {
   .hero h1 { font-size: 1.6rem; }
   .section { padding: 4rem 1rem; }
 }
+
+/* ...existing code... */
+
+/* Card grid for Services / Solutions */
+.section-cards .container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+/* individual card */
+.card {
+  background: rgba(255,255,255,0.06);
+  padding: 1.25rem;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  text-align: left;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+.card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.05rem;
+  color: #fff;
+}
+
+.card p {
+  margin: 0;
+  color: #dbe6ff;
+  font-size: 0.95rem;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+  background: rgba(255,255,255,0.08);
+}
+
+/* tighten spacing so cards sit just under the hero visually */
+.hero + .section-cards { padding-top: 2.25rem; }
+
+/* ...existing code... */
