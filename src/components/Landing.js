@@ -1,130 +1,65 @@
 // ...existing code...
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './landing.css';
 
 export default function Landing({ logo }) {
-  const [active, setActive] = useState('home');
-  const [expanded, setExpanded] = useState(null); // 'services' | 'solutions' | null
-  const year = new Date().getFullYear();
+  const [activeNode, setActiveNode] = useState(null); // 'about' | 'services' | 'solutions' | 'contact' | null
 
-  useEffect(() => {
-    const sections = document.querySelectorAll('section[data-section]');
-    if (!sections.length) return;
-    const obs = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      { threshold: 0.5 }
-    );
-    sections.forEach((s) => obs.observe(s));
-    return () => obs.disconnect();
-  }, []);
+  const nodes = [
+    { key: 'about', title: 'About', summary: 'Who we are — mission, values, team.' },
+    { key: 'services', title: 'Services', summary: 'Consulting · Systems Integration · Cloud & Data Engineering' },
+    { key: 'solutions', title: 'Solutions', summary: 'Mission systems · Enterprise platforms · AI & Automation' },
+    { key: 'contact', title: 'Contact', summary: 'Get in touch — email, phone, or request a call.' },
+  ];
 
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
-  const toggleExpand = (key) => {
-    setExpanded((prev) => (prev === key ? null : key));
+  const toggleNode = (key) => {
+    setActiveNode(prev => (prev === key ? null : key));
   };
 
   return (
-    <div className="landing">
+    <div className="landing brain-page">
       <nav className="nav">
         <img src={logo} className="nav-logo" alt="Synapse" />
         <ul className="nav-links">
-          <li className={active === 'home' ? 'active' : ''}><button onClick={() => scrollTo('home')}>Home</button></li>
-          <li className={active === 'services' ? 'active' : ''}><button onClick={() => scrollTo('services')}>Services</button></li>
-          <li className={active === 'solutions' ? 'active' : ''}><button onClick={() => scrollTo('solutions')}>Solutions</button></li>
-          <li className={active === 'about' ? 'active' : ''}><button onClick={() => scrollTo('about')}>About</button></li>
-          <li className={active === 'contact' ? 'active' : ''}><button onClick={() => scrollTo('contact')}>Contact</button></li>
+          <li><button onClick={() => setActiveNode('about')}>About</button></li>
+          <li><button onClick={() => setActiveNode('services')}>Services</button></li>
+          <li><button onClick={() => setActiveNode('solutions')}>Solutions</button></li>
+          <li><button onClick={() => setActiveNode('contact')}>Contact</button></li>
         </ul>
       </nav>
 
-      <section id="home" data-section className="section hero">
-        <div className="hero-inner">
-          <h1>Synapse Solutions</h1>
-          <p>Engineering the pathways that power innovation.</p>
-          <div className="cta">
-            <button className="btn primary" onClick={() => scrollTo('services')}>Get Started</button>
-            <button className="btn outline" onClick={() => scrollTo('about')}>Learn More</button>
+      <section className="section hero brain-section" aria-label="Synaptic map">
+        <div className="brain-wrap">
+          <div className="brain-center" aria-hidden>
+            <img src={logo} alt="Synapse logo / brain" />
+          </div>
+
+          <div className="nodes">
+            {nodes.map((n, i) => (
+              <button
+                key={n.key}
+                className={`node node--${n.key} ${activeNode === n.key ? 'expanded' : ''}`}
+                onClick={() => toggleNode(n.key)}
+                onKeyDown={(e) => { if (e.key === 'Enter') toggleNode(n.key); }}
+                aria-pressed={activeNode === n.key}
+                aria-expanded={activeNode === n.key}
+                title={n.title}
+              >
+                <div className="node-dot" />
+                <span className="node-label">{n.title}</span>
+
+                <div className="node-panel" role="region" aria-hidden={activeNode !== n.key}>
+                  <h4>{n.title}</h4>
+                  <p>{n.summary}</p>
+                  <div className="node-actions">
+                    <button className="btn primary" onClick={(e) => e.stopPropagation()}>Learn More</button>
+                  </div>
+                </div>
+              </button>
+            ))}
           </div>
         </div>
       </section>
-
-      {/* Combined cards section: two big cards (Services / Solutions) that expand on hover or click */}
-      <section id="services" data-section className="section section-cards">
-        <div
-            className={`card ${expanded === 'services' ? 'expanded' : ''}`}
-            onClick={() => toggleExpand('services')}
-            onKeyDown={(e) => { if (e.key === 'Enter') toggleExpand('services'); }}
-            role="button"
-            tabIndex={0}
-            aria-expanded={expanded === 'services'}
-          >
-            <div className="card-head">
-              <h3>Services</h3>
-            </div>
-
-          <div className="card-content">
-            <ul>
-              <li>Architecture & design reviews</li>
-              <li>Program & delivery advisory</li>
-               <li>Cloud migrations and data pipelines</li>
-               <li>Managed services and sustainment</li>
-            </ul>
-            <div className="card-actions">
-              <button className="btn primary">Contact Sales</button>
-            </div>
-          </div>
-        </div>
-
-          <div
-            className={`card ${expanded === 'solutions' ? 'expanded' : ''}`}
-            onClick={() => toggleExpand('solutions')}
-            onKeyDown={(e) => { if (e.key === 'Enter') toggleExpand('solutions'); }}
-            role="button"
-            tabIndex={0}
-            aria-expanded={expanded === 'solutions'}
-          >
-            <div className="card-head">
-              <h3>Solutions</h3>
-            </div>
-
-            <div className="card-content">
-              <ul>
-                <li>Mission-critical architectures</li>
-                <li>Custom enterprise platforms</li>
-                <li>AI/ML pipelines and automation</li>
-                <li>Security & compliance engineering</li>
-              </ul>
-              <div className="card-actions">
-                <button className="btn outline">Learn More</button>
-              </div>
-            </div>
-          </div>
-      </section>
-
-      <section id="about" data-section className="section">
-        <div className="container">
-          <h2>About</h2>
-          <p>Small description about the company, values, and team.</p>
-        </div>
-      </section>
-
-      <section id="contact" data-section className="section alt">
-        <div className="container">
-          <h2>Contact</h2>
-          <p>Contact form, email, phone, or call-to-action.</p>
-        </div>
-      </section>
-
-      <footer className="footer">© {year} Synapse Solutions</footer>
     </div>
   );
 }

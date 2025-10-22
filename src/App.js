@@ -1,5 +1,5 @@
 // ...existing code...
-import synapseLogo from './synapseLogo.svg';
+import synapseLogo from './components/synapseLogo.png';
 import './App.css';
 import Landing from './components/Landing';
 
