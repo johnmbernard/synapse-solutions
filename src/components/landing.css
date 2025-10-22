@@ -89,6 +89,9 @@ html {
 }
 
 .hero {
+  /* half of the viewport minus the nav height */
+  min-height: calc((100vh - var(--nav-height)) / 2);
+  padding: 2.5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -138,29 +141,38 @@ html {
   .section { padding: 4rem 1rem; }
 }
 
+  .section.hero {
+    min-height: calc((100vh - var(--nav-height)) * 0.5);
+    padding: 1.5rem 1rem;
+  }
+
 /* ...existing code... */
 
-/* Card grid for Services / Solutions */
-.section-cards .container {
-  width: 100%;
-  max-width: 1100px;
-  margin: 0 auto;
+/* cards container just under the hero */
+.section-cards {
+  min-height: calc((100vh - var(--nav-height)) * 0.5);
+  padding: 1.5rem 1rem;
 }
 
+/* card grid tweaks so cards can expand and push layout */
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
   margin-top: 1.25rem;
+
+  /* let rows have a consistent baseline height so "span" works */
+  grid-auto-rows: 160px;
+  align-items: start;
 }
 
-/* individual card */
+/* individual card - smoother transform and prepare for expand */
 .card {
   background: rgba(255,255,255,0.06);
   padding: 1.25rem;
   border-radius: 10px;
   box-shadow: 0 6px 18px rgba(0,0,0,0.45);
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms, background 180ms;
   text-align: left;
   min-height: 140px;
   display: flex;
@@ -168,27 +180,27 @@ html {
   justify-content: center;
   backdrop-filter: blur(6px);
   border: 1px solid rgba(255,255,255,0.03);
+  transform-origin: center top;
+  will-change: transform;
 }
 
-.card h3 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.05rem;
-  color: #fff;
-}
-
-.card p {
-  margin: 0;
-  color: #dbe6ff;
-  font-size: 0.95rem;
-}
-
+/* expand effect: scale + raise above neighbors and span two grid rows */
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 14px 30px rgba(0,0,0,0.55);
-  background: rgba(255,255,255,0.08);
+  transform: translateY(-8px) scale(1.04);
+  z-index: 5;
+  box-shadow: 0 22px 44px rgba(0,0,0,0.6);
+  background: rgba(255,255,255,0.085);
+  grid-row: span 2;
 }
 
-/* tighten spacing so cards sit just under the hero visually */
-.hero + .section-cards { padding-top: 2.25rem; }
-
-/* ...existing code... */
+/* avoid aggressive spanning on small screens */
+@media (max-width: 640px) {
+  .card {
+    min-height: auto;
+  }
+  .card:hover {
+    transform: translateY(-4px) scale(1.02);
+    grid-row: span 1;
+    z-index: 3;
+  }
+}

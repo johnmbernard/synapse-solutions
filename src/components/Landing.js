@@ -71,10 +71,6 @@ export default function Landing({ logo }) {
             </article>
           </div>
         </div>
-      </section>
-
-      {/* Solutions section updated to show cards as well */}
-      <section id="solutions" data-section className="section alt section-cards">
         <div className="container">
           <h2>Solutions</h2>
           <div className="card-grid">
@@ -93,6 +89,8 @@ export default function Landing({ logo }) {
           </div>
         </div>
       </section>
+
+      {/* Solutions section updated to show cards as well */}
 
       <section id="about" data-section className="section">
         <div className="container">
