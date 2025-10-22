@@ -4,6 +4,7 @@ import './landing.css';
 
 export default function Landing({ logo }) {
   const [active, setActive] = useState('home');
+  const [expanded, setExpanded] = useState(null); // 'services' | 'solutions' | null
   const year = new Date().getFullYear();
 
   useEffect(() => {
@@ -26,6 +27,10 @@ export default function Landing({ logo }) {
   const scrollTo = (id) => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const toggleExpand = (key) => {
+    setExpanded((prev) => (prev === key ? null : key));
   };
 
   return (
@@ -52,45 +57,58 @@ export default function Landing({ logo }) {
         </div>
       </section>
 
-      {/* Services section updated to show cards under the hero */}
+      {/* Combined cards section: two big cards (Services / Solutions) that expand on hover or click */}
       <section id="services" data-section className="section section-cards">
-        <div className="container">
-          <h2>Services</h2>
-          <div className="card-grid">
-            <article className="card">
-              <h3>Consulting</h3>
-              <p>Strategy, architecture reviews, and program guidance to accelerate delivery.</p>
-            </article>
-            <article className="card">
-              <h3>Systems Integration</h3>
-              <p>End-to-end integration across legacy and modern platforms for seamless operations.</p>
-            </article>
-            <article className="card">
-              <h3>Cloud & Data Engineering</h3>
-              <p>Scalable cloud builds, data pipelines, and analytics that unlock insights.</p>
-            </article>
-          </div>
-        </div>
-        <div className="container">
-          <h2>Solutions</h2>
-          <div className="card-grid">
-            <article className="card">
-              <h3>Mission Systems</h3>
-              <p>Robust, secure systems designed for mission-critical environments.</p>
-            </article>
-            <article className="card">
-              <h3>Enterprise Platforms</h3>
-              <p>Custom platforms that scale with business and technical demands.</p>
-            </article>
-            <article className="card">
-              <h3>AI & Automation</h3>
-              <p>Practical AI and automation that reduce cost and improve outcomes.</p>
-            </article>
-          </div>
-        </div>
-      </section>
+        <div
+            className={`card ${expanded === 'services' ? 'expanded' : ''}`}
+            onClick={() => toggleExpand('services')}
+            onKeyDown={(e) => { if (e.key === 'Enter') toggleExpand('services'); }}
+            role="button"
+            tabIndex={0}
+            aria-expanded={expanded === 'services'}
+          >
+            <div className="card-head">
+              <h3>Services</h3>
+            </div>
 
-      {/* Solutions section updated to show cards as well */}
+          <div className="card-content">
+            <ul>
+              <li>Architecture & design reviews</li>
+              <li>Program & delivery advisory</li>
+               <li>Cloud migrations and data pipelines</li>
+               <li>Managed services and sustainment</li>
+            </ul>
+            <div className="card-actions">
+              <button className="btn primary">Contact Sales</button>
+            </div>
+          </div>
+        </div>
+
+          <div
+            className={`card ${expanded === 'solutions' ? 'expanded' : ''}`}
+            onClick={() => toggleExpand('solutions')}
+            onKeyDown={(e) => { if (e.key === 'Enter') toggleExpand('solutions'); }}
+            role="button"
+            tabIndex={0}
+            aria-expanded={expanded === 'solutions'}
+          >
+            <div className="card-head">
+              <h3>Solutions</h3>
+            </div>
+
+            <div className="card-content">
+              <ul>
+                <li>Mission-critical architectures</li>
+                <li>Custom enterprise platforms</li>
+                <li>AI/ML pipelines and automation</li>
+                <li>Security & compliance engineering</li>
+              </ul>
+              <div className="card-actions">
+                <button className="btn outline">Learn More</button>
+              </div>
+            </div>
+          </div>
+      </section>
 
       <section id="about" data-section className="section">
         <div className="container">
