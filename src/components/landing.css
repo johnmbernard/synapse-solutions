@@ -1,104 +1,103 @@
-:root {
-  background-image: url('./background.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* ======= Brain breathing pulse animations ======= */
+@keyframes brainPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 20px rgba(40, 150, 255, 0.3))
+            drop-shadow(0 0 40px rgba(60, 240, 255, 0.2))
+            drop-shadow(0 0 60px rgba(40, 150, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 35px rgba(40, 150, 255, 0.8))
+            drop-shadow(0 0 70px rgba(60, 240, 255, 0.6))
+            drop-shadow(0 0 90px rgba(40, 150, 255, 0.4));
+  }
 }
 
+@keyframes brainPulseHover {
+  0%, 100% {
+    filter: drop-shadow(0 0 40px rgba(40, 150, 255, 0.5))
+            drop-shadow(0 0 80px rgba(60, 240, 255, 0.3))
+            drop-shadow(0 0 120px rgba(40, 150, 255, 0.3));
+  }
+  50% {
+    filter: drop-shadow(0 0 80px rgba(40, 150, 255, 1))
+            drop-shadow(0 0 150px rgba(60, 240, 255, 0.8))
+            drop-shadow(0 0 200px rgba(40, 150, 255, 0.6));
+  }
+}
+
+
+/* ======= Page background ======= */
 .brain-only {
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 2rem 1rem;
-  background-image: url('brain.png');
-  background-size: 1500px;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #0a0a1a;
+  background-image: url('./ripple_wave_background.gif');
+  background-size: 100vh auto;
   background-position: center;
-  background-repeat: no-repeat;
 }
 
-/* brain container */
+/* ======= Brain main container ======= */
 .brain-wrap {
   position: relative;
-  width: min(1200px, 90vw);
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  background: radial-gradient(800px 360px at 50% 45%, rgba(255,255,255,0.02), transparent 30%);
-  border-radius: 48% 52% 52% 48% / 38% 38% 62% 62%;
+  width: 1100px;
+  height: 900px;
+  background-image: url('./brain.png'); /* or .jpg */
+  background-size: 90vh auto;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  animation: brainPulse 6s ease-in-out infinite;
+  transition: transform 1.5s ease, filter 1.5s ease;
+}
+
+.brain-wrap:hover {
+  animation: brainPulseHover 3s ease-in-out infinite;
+  transform: scale(1.05);
 }
 
 
-/* ...existing code... */
-
-/* simplified lobe panels — just simple translucent boxes positioned top/left/right/bottom */
+/* ======= Interactive lobe panels ======= */
 .lobe-panel {
   position: absolute;
-  width: 240px;
-  height: 84px;
-  padding: 0.6rem 0.8rem;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  cursor: pointer;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
-  border-radius: 10px;
-  background: rgba(6,10,20,0.75);
-  color: #e6eefc;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.04);
-  z-index: 30;
-  pointer-events: auto;
-  transition: transform 180ms ease, background 160ms ease;
+  padding: 10px;
+  background: rgba(255,255,255,0.05);
+  color: #fff;
+  opacity: 0.9;
+  transition: all 0.4s ease;
+  z-index: 4;
 }
 
-/* small hover lift to indicate interactivity */
 .lobe-panel:hover {
-  transform: translateY(-6px);
-  background: rgba(6,10,20,0.88);
+  transform: scale(1.1);
+  box-shadow: 0 0 25px rgba(60,240,255,0.6);
 }
 
-/* fixed positions: top, bottom, left, right (centered on each side) */
-.panel--about {  /* top */
-  left: 6%;
-  top: 50%;
-  transform: translate(0, -50%);
+.lobe-panel p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.4s ease;
 }
 
-.panel--contact { /* bottom */
-  bottom: 6%;
-  left: 50%;
-  transform: translate(20%, -150%);
+.lobe-panel.visible p {
+  opacity: 1;
+  max-height: 100px;
 }
 
-.panel--services { /* left */
-  top: 6%;
-  left: 50%;
-  transform: translate(-40%, 200%);
-}
+/* Position for your brain layout */
+.panel--about { top: 40%; left: 18%; }
+.panel--services { top: 25%; left: 48%; }
+.panel--solutions { top: 47%; left: 40%; }
+.panel--contact { top: 70%; left: 55%; }
 
-.panel--solutions { /* right */
-  right: 6%;
-  top: 50%;
-  transform: translate(-140%, -50%);
-}
 
-/* typography inside boxes */
-.lobe-panel h4 { margin: 0 0 0.25rem 0; font-size: 1rem; }
-.lobe-panel p  { margin: 0; font-size: 0.9rem; color: #d5e2ff; }
-
-/* responsive: shrink boxes and stack a bit on small screens */
-@media (max-width: 880px) {
-  .lobe-panel { width: 200px; height: 72px; padding: 0.5rem; }
-  .panel--services, .panel--solutions {
-    left: 50% !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: calc(100% + 8px);
-    transform: translate(-50%, 0);
-  }
-  .panel--about { top: 4%; }
-  .panel--contact { bottom: 4%; }
-}
-
-/* ...existing code... */
