@@ -9,7 +9,6 @@ export default function Landing() {
     <div className="brain-only">
       <div className="brain-wrap" role="img" aria-label="Interactive brain map">
 
-
         {/* panels are now the interactive elements (click / Enter toggles) */}
         <div
           className={`lobe-panel panel--about ${active === 'about' ? 'visible' : ''}`}

@@ -19,7 +19,7 @@
 /* brain container */
 .brain-wrap {
   position: relative;
-  width: min(920px, 92vw);
+  width: min(1200px, 90vw);
   height: 100vh;
   display: flex;
   align-items: center;
@@ -60,27 +60,27 @@
 
 /* fixed positions: top, bottom, left, right (centered on each side) */
 .panel--about {  /* top */
-  top: 6%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.panel--contact { /* bottom */
-  bottom: 6%;
-  left: 50%;
-  transform: translate(-50%, 0);
-}
-
-.panel--services { /* left */
   left: 6%;
   top: 50%;
   transform: translate(0, -50%);
 }
 
+.panel--contact { /* bottom */
+  bottom: 6%;
+  left: 50%;
+  transform: translate(20%, -150%);
+}
+
+.panel--services { /* left */
+  top: 6%;
+  left: 50%;
+  transform: translate(-40%, 200%);
+}
+
 .panel--solutions { /* right */
   right: 6%;
   top: 50%;
-  transform: translate(0, -50%);
+  transform: translate(-140%, -50%);
 }
 
 /* typography inside boxes */
