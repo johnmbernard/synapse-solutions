@@ -8,10 +8,7 @@ export default function Landing() {
   return (
     <div className="brain-only">
       <div className="brain-wrap" role="img" aria-label="Interactive brain map">
-        <svg viewBox="0 0 600 360" className="brain-svg" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          {/* removed path lobes to avoid leftover black shapes */}
-          <circle cx="300" cy="150" r="36" className="brain-core" />
-        </svg>
+
 
         {/* panels are now the interactive elements (click / Enter toggles) */}
         <div

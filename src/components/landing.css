@@ -1,8 +1,19 @@
+:root {
+  background-image: url('./background.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
 .brain-only {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem 1rem;
+  background-image: url('brain.png');
+  background-size: 1500px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* brain container */
@@ -16,19 +27,8 @@
   margin: 0 auto;
   background: radial-gradient(800px 360px at 50% 45%, rgba(255,255,255,0.02), transparent 30%);
   border-radius: 48% 52% 52% 48% / 38% 38% 62% 62%;
-  background-image: url('./Brain.webp');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-
-/* center core */
-.brain-core {
-  fill: rgba(255,255,255,0.06);
-  stroke: rgba(255,255,255,0.12);
-  stroke-width: 1.5;
-}
 
 /* ...existing code... */
 
