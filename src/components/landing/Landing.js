@@ -14,7 +14,7 @@ export default function Landing() {
 
       <section id="services" className="panel">
         <h1>Services</h1>
-        <p>Project Management | Platform | AI | Consulting</p>
+        <p>Project Management | Platform | AI | Consulting | Custom 3D Printing | 3D Modeling</p>
       </section>
 
       <section id="solutions" className="panel">
