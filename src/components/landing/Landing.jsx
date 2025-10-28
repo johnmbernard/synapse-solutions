@@ -9,7 +9,7 @@ export default function Landing() {
     <div className="page">
       <section id="about" className="panel">
         <h1>About</h1>
-        <p>Learn more about us.</p>
+        <p>Learn more about Synapse.</p>
       </section>
 
       <section id="services" className="panel">
@@ -24,7 +24,7 @@ export default function Landing() {
 
       <section id="contact" className="panel">
         <h1>Contact</h1>
-        <p>Get in touch with us.</p>
+        <p>Get in touch with Synapse.</p>
         <div id="contact" className="contact-methods">
           <a href="https://www.linkedin.com/company/synapsesolutionsllc" target="_blank" rel="noopener noreferrer">
             <img src={linkedinicon} alt="LinkedIn" style={{ width: "40px", height: "40px"}}/>
