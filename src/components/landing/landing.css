@@ -40,7 +40,7 @@ html, body {
 .page {
   scroll-behavior: smooth;
   background-image: url(./brain_background_boomerang.gif);
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 /* Full Screen Panels */
@@ -106,4 +106,14 @@ img {
 .contact-methods img:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 10px rgba(0, 238, 255, 0.9));
+}
+
+.panel-link {
+  color: rgba(0,255,255,0.8);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+.panel-link:hover {
+  color: white;
 }

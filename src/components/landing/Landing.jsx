@@ -3,6 +3,8 @@ import "./landing.css";
 import linkedinicon from "./linkedin_icon.png";
 import phoneicon from "./phone_icon.png";
 import emailicon from "./email_icon.png";
+import { Link } from "react-router-dom";
+
 
 export default function Landing() {
   return (
@@ -10,6 +12,7 @@ export default function Landing() {
       <section id="about" className="panel">
         <h1>About</h1>
         <p>Learn more about Synapse.</p>
+        <Link to="/about" className="panel-link" >→ Explore</Link>
       </section>
 
       <section id="services" className="panel">

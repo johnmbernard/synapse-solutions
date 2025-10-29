@@ -1,0 +1,150 @@
+/* Page-level behavior: snap each full-screen section */
+.about-page {
+  min-height: 100vh;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  background-color: black;          /* Allow scrolling from About → Mission */
+}
+
+/* === Full-screen panels === */
+.about-panel,
+.mission-panel {
+  height: 100vh;             /* Full viewport each */
+  scroll-snap-align: start;  /* Snap to start of viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 1.25rem;
+  text-align: center;
+}
+
+/* Match your translucent/glass aesthetic */
+.about-panel {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+.about-content {
+  max-width: 900px;
+  margin-inline: auto;
+}
+
+.about-content h1 {
+  font-family: 'Orbitron', sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: .5rem;
+}
+
+.tagline {
+  color: rgba(0, 255, 255, 0.9);
+  margin-bottom: 1rem;
+}
+
+.description {
+  color: rgba(255, 255, 255, 0.92);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+/* Value blocks (leave if you like the current treatment) */
+.values {
+  margin-top: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+.values > div {
+  color: rgba(0,255,255,.9);
+  font-weight: 700;
+}
+.value-description {
+  margin-top: .4rem;
+  font-weight: 400;
+  color: rgba(255,255,255,.9);
+  font-size: .9rem;
+}
+
+/* === Mission panel === */
+.mission-panel {
+  background: rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(8px);
+  color: #fff;
+}
+
+/* Mission card centered at top of the second screen */
+.mission-card {
+  max-width: 800px;
+  margin-inline: auto;
+  padding: 1.25rem 1.5rem;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(0,255,255,0.22);
+  border-radius: 12px;
+  box-shadow: 0 0 14px rgba(0,255,255,0.18);
+}
+.mission-card h3 {
+  margin: 0 0 .5rem;
+  font-family: 'Orbitron', sans-serif;
+  color: rgba(0,255,255,0.9);
+  letter-spacing: 1px;
+}
+
+/* Focus areas as vertical rows, like your landing panels */
+.focus-areas {
+  margin-top: 2rem;
+  width: min(1000px, 92vw);  /* Nice readable max width */
+  display: flex;
+  flex-direction: column;    /* Vertical stack */
+  gap: 12px;
+}
+
+/* Each row takes a slice of the viewport height */
+.focus-item {
+  height: 18vh;                              /* Tweak 16–22vh if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #fff;
+
+  background: rgba(255,255,255,0.10);
+  border: 1px solid rgba(0,255,255,0.28);
+  border-radius: 10px;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 16px rgba(0,255,255,0.18);
+  transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+}
+
+.focus-item:hover {
+  transform: scale(1.02);
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(0,255,255,0.45);
+  box-shadow: 0 0 26px rgba(0,255,255,0.35);
+}
+
+/* Logo in the top-left (unchanged) */
+.site-logo {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: rgba(0,0,0,.25);
+  padding: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.3);
+  z-index: 10;
+  transition: opacity .25s ease;
+}
+.site-logo:hover { opacity: .95; }
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .values { grid-template-columns: 1fr 1fr; }
+  .focus-item { height: 16vh; font-size: .95rem; }
+}
