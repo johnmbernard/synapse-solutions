@@ -1,6 +1,9 @@
 import React from 'react';
 import './About.css';
-import synapseLogo from '/public/synapseLogo.png';
+import synapseLogo from '/synapseLogo.png';
+import linkedinicon from '/linkedin_icon.png';
+import phoneicon from '/phone_icon.png';
+import emailicon from '/email_icon.png';
 
 export default function About() {
   return (
@@ -63,6 +66,20 @@ export default function About() {
           <div className="focus-item">Mission Systems</div>
         </div>
     </section>
+    <footer className="about-footer">
+        <div id="contact" className="contact-methods">
+            <a href="https://www.linkedin.com/company/synapsesolutionsllc" target="_blank" rel="noopener noreferrer">
+                <img src={linkedinicon} alt="LinkedIn" style={{ width: "40px", height: "40px"}}/>
+            </a>
+            <a href="tel:+3015584771">
+                <img src={phoneicon} alt="Phone" style={{ width: "40px", height: "40px"}}/>
+            </a>
+            <a href="mailto:info@example.com">
+                <img src={emailicon} alt="Email" style={{ width: "40px", height: "40px"}}/>
+            </a>
+        </div>
+      <p>© 2024 Synapse Solutions LLC. All rights reserved.</p>
+    </footer>
     </div>
   );
 }

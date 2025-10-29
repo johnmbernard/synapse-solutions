@@ -1,8 +1,8 @@
 import React from "react";
 import "./landing.css";
-import linkedinicon from "./linkedin_icon.png";
-import phoneicon from "./phone_icon.png";
-import emailicon from "./email_icon.png";
+import linkedinicon from "/linkedin_icon.png";
+import phoneicon from "/phone_icon.png";
+import emailicon from "/email_icon.png";
 import { Link } from "react-router-dom";
 
 
