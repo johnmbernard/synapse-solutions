@@ -51,7 +51,8 @@
 
 /* Value blocks (leave if you like the current treatment) */
 .values {
-  margin-top: 1.5rem;
+  position: fixed;
+  top: 25%;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
@@ -127,7 +128,7 @@
 }
 
 /* Logo in the top-left (unchanged) */
-.site-logo {
+.panel .site-logo {
   position: fixed;
   top: 18px;
   left: 18px;
@@ -135,7 +136,7 @@
   height: 48px;
   object-fit: contain;
   border-radius: 8px;
-  background: rgba(53, 67, 113, 0.25);
+  background: rgba(255, 255, 255, 0.7);
   padding: 6px;
   box-shadow: 0 2px 8px rgba(0,0,0,.3);
   z-index: 10;
@@ -164,6 +165,13 @@
   gap: 30px;
   margin-bottom: 15px;
   filter: drop-shadow(0 0 6px rgba(0, 255, 255, 0.5));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+.contact-methods img {
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
   transition: transform 0.25s ease, filter 0.25s ease;
 }
 

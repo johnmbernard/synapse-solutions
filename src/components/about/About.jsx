@@ -12,24 +12,6 @@ export default function About() {
         <img src={synapseLogo} alt="Logo" className="site-logo" />
       </a>
       <section id="about" className="about-panel panel">
-        <div className="about-content">
-          <h1>About</h1>
-          <p className="tagline">Engineering intelligence. Shaping outcomes.</p>
-          <p className="description">
-          Synapse Solutions is a technology consulting and systems integration studio
-          specializing in cloud, data, and mission-critical engineering. We partner with
-          enterprise organizations to deliver scalable platforms and automation that power
-          the next generation of operations.
-        </p>
-        <p className="description">
-          Our approach blends engineering discipline with creative thought, enabling
-          organizations to transform data into actionable intelligence, modernize systems,
-          and optimize performance.
-        </p>
-        <p className="description">
-          Rooted in insights, grounded in execution. We believe true innovation requires
-          clarity of purpose, collaboration, and relentless focus on impact.
-        </p>
         <div className="values">
           <div>Precision
             <p className="value-description">
@@ -52,6 +34,24 @@ export default function About() {
             </p>
           </div>
         </div>
+        <div className="about-content">
+          <h1>About</h1>
+          <p className="tagline">Engineering intelligence. Shaping outcomes.</p>
+          <p className="description">
+          Synapse Solutions is a technology consulting and systems integration studio
+          specializing in cloud, data, and mission-critical engineering. We partner with
+          enterprise organizations to deliver scalable platforms and automation that power
+          the next generation of operations.
+        </p>
+        <p className="description">
+          Our approach blends engineering discipline with creative thought, enabling
+          organizations to transform data into actionable intelligence, modernize systems,
+          and optimize performance.
+        </p>
+        <p className="description">
+          Rooted in insights, grounded in execution. We believe true innovation requires
+          clarity of purpose, collaboration, and relentless focus on impact.
+        </p>
       </div>
     </section>
     <section className="mission-panel ">
