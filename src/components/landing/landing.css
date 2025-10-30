@@ -39,7 +39,7 @@ html, body {
 
 .page {
   scroll-behavior: smooth;
-  background-image: url("brain_background_boomerang.gif");
+  background-image: url("/brain_background_boomerang.gif");
   background-size: 100% 100%;
 }
 
