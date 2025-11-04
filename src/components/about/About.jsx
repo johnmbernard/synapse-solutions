@@ -1,6 +1,6 @@
 import React from 'react';
 import './About.css';
-import synapseLogo from '/synapseLogo.png';
+import { Link } from "react-router-dom";
 import linkedinicon from '/linkedin_icon.png';
 import phoneicon from '/phone_icon.png';
 import emailicon from '/email_icon.png';
@@ -8,9 +8,7 @@ import emailicon from '/email_icon.png';
 export default function About() {
   return (
     <div className="about-page">
-      <a href="https://jmbxlab.com" target="_blank" rel="noopener noreferrer">
-        <img src={synapseLogo} alt="Logo" className="site-logo" />
-      </a>
+      <Link to="/" className="back-link">← Home</Link>
       <section id="about" className="about-panel panel">
         <div className="values">
           <div>Precision
