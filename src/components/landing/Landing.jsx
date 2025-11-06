@@ -36,7 +36,7 @@ export default function Landing() {
           <a href="tel:+3015584771">
             <img src={phoneicon} alt="Phone" style={{ width: "40px", height: "40px"}}/>
           </a>
-          <a href="mailto:info@example.com">
+          <a href="mailto:jbernard@synapsesolves.com">
             <img src={emailicon} alt="Email" style={{ width: "40px", height: "40px"}}/>
           </a>
         </div>

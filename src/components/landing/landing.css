@@ -54,7 +54,6 @@ html, body {
   align-items: center;
   color: white;
   background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
   border-bottom: 2px solid rgba(255, 255, 255, 0.3);
   flex-direction: column;
   text-align: center;
