@@ -40,8 +40,11 @@ html, body {
 .page {
   scroll-behavior: smooth;
   background-image: url("/brain_background_boomerang.gif");
-  background-size: 100% 100%;
+  background-size: cover;           /* maintains aspect ratio */
+  background-position: center;      /* centers image */
+  background-repeat: no-repeat;
 }
+
 
 /* Full Screen Panels */
 .panel {
@@ -143,4 +146,40 @@ html, body {
 }
 .panel-link:hover {
   color: white;
+}
+
+/* ===== MOBILE LAYOUT ===== */
+@media screen and (max-width: 768px) {
+  .panel {
+    min-height: auto;
+    height: auto;
+    padding: 2rem 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .panel p,
+  .panel .panel-link,
+  .panel img {
+    opacity: 1 !important;
+    max-height: none !important;
+  }
+
+  h1 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  p {
+    font-size: clamp(0.9rem, 4vw, 1.2rem);
+  }
+
+  .contact-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
 }

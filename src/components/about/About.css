@@ -68,12 +68,13 @@
 
 /* Value blocks (leave if you like the current treatment) */
 .values {
-  position: fixed;
-  top: 25%;
+  position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1rem;
+  margin-top: 2rem;
 }
+
 .values > div {
   color: rgba(0,255,255,.9);
   font-weight: 700;
@@ -163,9 +164,33 @@
 
 /* Responsive tweaks */
 @media (max-width: 768px) {
-  .values { grid-template-columns: 1fr 1fr; }
-  .focus-item { height: 16vh; font-size: .95rem; }
+  .values {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .values > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .value-description {
+    margin-top: 0.5rem;
+    font-size: 0.95rem;
+    line-height: 1.4;
+  }
+
+  .about-panel,
+  .mission-panel {
+    height: auto;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+  }
 }
+
 
 .about-footer {
   text-align: center;
@@ -195,4 +220,50 @@
 .contact-methods img:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 10px rgba(0, 238, 255, 0.9));
+}
+
+/* ===== MOBILE LAYOUT ===== */
+@media screen and (max-width: 768px) {
+  .about-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .about-page h1 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+    margin-bottom: 1rem;
+  }
+
+  .about-section,
+  .about-values {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .about-values {
+    grid-template-columns: 1fr !important; /* force single column */
+  }
+
+  .about-values h2 {
+    margin-top: 1rem;
+    font-size: clamp(1.1rem, 5vw, 1.3rem);
+  }
+
+  .about-values p {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    line-height: 1.4;
+  }
+
+  .about-text {
+    font-size: clamp(0.9rem, 4vw, 1.1rem);
+    line-height: 1.5;
+    margin-top: 1rem;
+  }
 }
