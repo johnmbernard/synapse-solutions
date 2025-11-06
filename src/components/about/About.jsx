@@ -61,7 +61,7 @@ export default function About() {
           <div className="focus-item">Cloud Engineering</div>
           <div className="focus-item">Observability & Data</div>
           <div className="focus-item">Automation & AI</div>
-          <div className="focus-item">Mission Systems</div>
+          <div className="focus-item">Project Management</div>
         </div>
     </section>
     <footer className="about-footer">
