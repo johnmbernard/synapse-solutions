@@ -24,6 +24,7 @@ export default function Landing() {
       <section id="solutions" className="panel">
         <h1>Solutions</h1>
         <p>Custom Software | Data Analytics | Machine Learning</p>
+        <Link to="/solutions" className="panel-link" >→ Explore</Link>
       </section>
 
       <section id="contact" className="panel">
