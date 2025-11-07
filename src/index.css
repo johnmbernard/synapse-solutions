@@ -12,8 +12,4 @@ code {
     monospace;
 }
 
-@media (max-width: 768px) {
-  body {
-    background: red !important;
-  }
-}
+

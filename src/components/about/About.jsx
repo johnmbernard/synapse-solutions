@@ -69,10 +69,10 @@ export default function About() {
             <a href="https://www.linkedin.com/company/synapsesolutionsllc" target="_blank" rel="noopener noreferrer">
                 <img src={linkedinicon} alt="LinkedIn" style={{ width: "40px", height: "40px"}}/>
             </a>
-            <a href="tel:+3015584771">
+            <a href="tel:+13015584771">
                 <img src={phoneicon} alt="Phone" style={{ width: "40px", height: "40px"}}/>
             </a>
-            <a href="mailto:jbernard@synapsesolves.com">
+            <a href="mailto:jmbernard@synapsesolves.com">
                 <img src={emailicon} alt="Email" style={{ width: "40px", height: "40px"}}/>
             </a>
         </div>

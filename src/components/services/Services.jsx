@@ -1,6 +1,9 @@
 import React from "react";
 import "./Services.css";
 import { Link } from "react-router-dom";
+import linkedinicon from '/linkedin_icon.png';
+import phoneicon from '/phone_icon.png';
+import emailicon from '/email_icon.png';
 
 export default function Services() {
   const services = [
@@ -38,6 +41,17 @@ export default function Services() {
 
       <footer className="services-footer">
         <p>✨ Engineering intelligence. Shaping outcomes. ✨</p>
+        <div id="contact" className="contact-methods">
+                    <a href="https://www.linkedin.com/company/synapsesolutionsllc" target="_blank" rel="noopener noreferrer">
+                        <img src={linkedinicon} alt="LinkedIn" style={{ width: "40px", height: "40px"}}/>
+                    </a>
+                    <a href="tel:+13015584771">
+                        <img src={phoneicon} alt="Phone" style={{ width: "40px", height: "40px"}}/>
+                    </a>
+                    <a href="mailto:jmbernard@synapsesolves.com">
+                        <img src={emailicon} alt="Email" style={{ width: "40px", height: "40px"}}/>
+                    </a>
+                </div>
       </footer>
     </div>
   );
