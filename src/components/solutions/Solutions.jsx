@@ -1,11 +1,14 @@
 import React from 'react';
 import './Solutions.css';
 import { Link } from 'react-router-dom';
+import synapseLogo from '/synapseLogo.png';
 
 export default function Solutions() {
   return (
     <div className="solutions-page">
-      <Link to="/" className="back-link">← Home</Link>
+      <a href="https://synapsesolves.com/" target="_blank" rel="noopener noreferrer" className="logo-link">
+        <img src={synapseLogo} alt="Synapse Solutions Logo" className="site-logo" />
+      </a>
 
       <header className="solutions-hero">
         <h1>Pathways</h1>

@@ -2,30 +2,6 @@
 
 /* ...existing code... */
 
-.site-logo {
-  position: fixed;       /* stays in corner even when scrolling */
-  top: 14px;
-  left: 14px;
-  width: 48px;           /* small size — adjust as needed */
-  height: auto;
-  z-index: 9999;
-  border-radius: 6px;
-  background: rgba(255,255,255,0.03);
-  padding: 4px;
-  box-shadow: 0 6px 14px rgba(0,0,0,0.35);
-  cursor: pointer;
-  opacity: 1 !important;     /* override the generic img rule that hides images */
-  max-height: none !important;
-}
-
-/* optional: slightly larger on hover */
-.site-logo:hover {
-  transform: scale(1.05);
-  transition: transform 160ms ease;
-}
-
-/* ...existing code... */
-
 h1, h2, h3 {
   font-family: 'Orbitron', sans-serif;
   letter-spacing: 0.5px;
@@ -135,16 +111,6 @@ html, body {
 .contact-methods img:hover {
   transform: scale(1.15);
   filter: drop-shadow(0 0 10px rgba(0, 238, 255, 0.9));
-}
-
-.panel-link {
-  color: rgba(0,255,255,0.8);
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s;
-}
-.panel-link:hover {
-  color: white;
 }
 
 /* ===== MOBILE LAYOUT ===== */

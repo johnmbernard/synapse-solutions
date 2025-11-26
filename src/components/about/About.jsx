@@ -4,11 +4,14 @@ import { Link } from "react-router-dom";
 import linkedinicon from '/linkedin_icon.png';
 import phoneicon from '/phone_icon.png';
 import emailicon from '/email_icon.png';
+import synapseLogo from '/synapseLogo.png';
 
 export default function About() {
   return (
     <div className="about-page">
-      <Link to="/" className="back-link">← Home</Link>
+      <a href="https://synapsesolves.com/" target="_blank" rel="noopener noreferrer" className="logo-link">
+        <img src={synapseLogo} alt="Synapse Solutions Logo" className="site-logo" />
+      </a>
       <section id="about" className="about-panel panel">
         <div className="values">
           <div>Precision

@@ -4,11 +4,13 @@ import linkedinicon from "/linkedin_icon.png";
 import phoneicon from "/phone_icon.png";
 import emailicon from "/email_icon.png";
 import { Link } from "react-router-dom";
+import synapseLogo from '/synapseLogo.png';
 
 
 export default function Landing() {
   return (
     <div className="page">
+      <img src={synapseLogo} alt="Synapse Solutions Logo" className="site-logo" />
       <section id="about" className="panel">
         <h1>About</h1>
         <p>Learn more about Synapse.</p>
