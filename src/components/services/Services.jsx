@@ -55,7 +55,7 @@ export default function Services() {
         <div id="project-management" className="services-detail-card">
           <h2>Project & Program Management</h2>
           <p>
-            We believe in the right tools for the right jobs. Whether its Agile, Waterfall, or hybrid, we have the expertise to tailor project management approaches that fit your organizations unique needs.
+            We believe in the right tools for the right jobs. Whether it's Agile, Waterfall, or hybrid, we have the expertise to tailor project management approaches that fit your organization's unique needs.
             Our immense experience across industries, projects, and tools allows us to build adaptive frameworks and automate processes that bring clarity to decision-makers in real time and give time back to delivery
             teams. <i>We don't just manage projects — we engineer confidence in delivery.</i>
           </p>

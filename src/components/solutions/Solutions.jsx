@@ -10,42 +10,80 @@ export default function Solutions() {
         <img src={synapseLogo} alt="Synapse Solutions Logo" className="site-logo" />
       </a>
 
-      <header className="solutions-hero">
-        <h1>Pathways</h1>
-        <p className="tagline">Automating product management tasks so teams focus on outcomes.</p>
-        <span className="coming-soon">Coming soon</span>
-      </header>
+      {/* Hero Section */}
+      <section className="solutions-intro">
+        <div className="solutions-hero">
+          <h1>Pathways</h1>
+          <p className="tagline">Automating product management tasks so teams focus on outcomes.</p>
+          <span className="coming-soon">Coming Soon</span>
+        </div>
+      </section>
 
-      <section className="features" aria-labelledby="features-heading">
-        <h2 id="features-heading">What Pathways will automate</h2>
-
+      {/* Features Section */}
+      <section className="solutions-features">
+        <h2>What Pathways Will Automate</h2>
         <ul className="feature-list">
           <li>
-            <strong>Capacity management</strong>
-            <span> — model and allocate resource capacity automatically.</span>
+            <strong>Capacity Management</strong>
+            <span>Model and allocate resource capacity automatically.</span>
           </li>
           <li>
-            <strong>Schedule forecasting</strong>
-            <span> — predict delivery dates based on historical throughput.</span>
+            <strong>Schedule Forecasting</strong>
+            <span>Predict delivery dates based on historical throughput.</span>
           </li>
           <li>
-            <strong>Dependency management</strong>
-            <span> — detect and surface cross-team blockers and risks.</span>
+            <strong>Dependency Management</strong>
+            <span>Detect and surface cross-team blockers and risks.</span>
           </li>
           <li>
-            <strong>Integrated reporting</strong>
-            <span> — roll up metrics for stakeholders without manual work.</span>
-          </li>
-          <li>
-            <strong>Initation and Refinement</strong>
-            <span> — scaled processes for initiating and refining projects.</span>
+            <strong>Integrated Reporting</strong>
+            <span>Roll up metrics for stakeholders without manual work.</span>
           </li>
         </ul>
       </section>
 
-      <section className="cta">
-        <p>Want early access? <a className="panel-link" href="mailto:hello@example.com">Request access</a></p>
+      {/* Values Section */}
+      <section className="solutions-values">
+        <h2>Core Values</h2>
+        <div className="values">
+          <div>
+            <div className="value">Clarity</div>
+            <div className="value-description">
+              We present insights and forecasts that are simple to act on — no opaque models.
+            </div>
+          </div>
+          <div>
+            <div className="value">Velocity</div>
+            <div className="value-description">
+              Automate repeatable PM work so teams can move faster without sacrificing quality.
+            </div>
+          </div>
+          <div>
+            <div className="value">Reliability</div>
+            <div className="value-description">
+              Predictable scheduling and dependency handling you can trust for planning.
+            </div>
+          </div>
+          <div>
+            <div className="value">Collaboration</div>
+            <div className="value-description">
+              Cross-team visibility and signals so stakeholders stay aligned.
+            </div>
+          </div>
+        </div>
       </section>
+
+      {/* CTA Section */}
+      <section className="solutions-cta">
+        <div className="cta">
+          <p>Want early access to Pathways?</p>
+          <a className="panel-link" href="mailto:hello@synapsesolves.com">Request Access</a>
+        </div>
+      </section>
+
+      <footer className="solutions-footer">
+        Building the future of intelligent project management.
+      </footer>
     </div>
   );
 }
