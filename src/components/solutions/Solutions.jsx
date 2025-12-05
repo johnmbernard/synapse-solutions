@@ -42,36 +42,6 @@ export default function Solutions() {
         </ul>
       </section>
 
-      {/* Values Section */}
-      <section className="solutions-values">
-        <h2>Core Values</h2>
-        <div className="values">
-          <div>
-            <div className="value">Clarity</div>
-            <div className="value-description">
-              We present insights and forecasts that are simple to act on — no opaque models.
-            </div>
-          </div>
-          <div>
-            <div className="value">Velocity</div>
-            <div className="value-description">
-              Automate repeatable PM work so teams can move faster without sacrificing quality.
-            </div>
-          </div>
-          <div>
-            <div className="value">Reliability</div>
-            <div className="value-description">
-              Predictable scheduling and dependency handling you can trust for planning.
-            </div>
-          </div>
-          <div>
-            <div className="value">Collaboration</div>
-            <div className="value-description">
-              Cross-team visibility and signals so stakeholders stay aligned.
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="solutions-cta">
