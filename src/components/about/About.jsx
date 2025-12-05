@@ -61,10 +61,10 @@ export default function About() {
             <p>To engineer clarity in complex systems — helping teams build, automate, and scale with confidence.</p>
         </div>
         <div className="focus-areas">
-          <div className="focus-item">Cloud Engineering</div>
+          <div className="focus-item">Project & Product Management</div>          
+          <div className="focus-item">Platform & Cloud Engineering</div>
           <div className="focus-item">Observability & Data</div>
           <div className="focus-item">Automation & AI</div>
-          <div className="focus-item">Project Management</div>
         </div>
     </section>
     <footer className="about-footer">

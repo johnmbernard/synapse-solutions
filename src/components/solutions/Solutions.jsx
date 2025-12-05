@@ -36,6 +36,10 @@ export default function Solutions() {
             <strong>Integrated reporting</strong>
             <span> — roll up metrics for stakeholders without manual work.</span>
           </li>
+          <li>
+            <strong>Initation and Refinement</strong>
+            <span> — scaled processes for initiating and refining projects.</span>
+          </li>
         </ul>
       </section>
 
